@@ -1,5 +1,8 @@
 # CMS HCAHPS Patient Experience Dashboard (Excel + Power Query)
 
+![Dashboard](screenshots/dashboard.png)
+![Map](screenshots/map.png)
+
 ## Overview
 A refreshable Excel dashboard built from CMS Provider Data to compare hospital patient experience by state, ownership type, and facility.
 
