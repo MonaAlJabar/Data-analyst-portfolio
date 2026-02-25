@@ -1,26 +1,25 @@
 # CMS HCAHPS Patient Experience Dashboard (Excel + Power Query)
 
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](screenshots/dashboard.png)  
 ![Map](screenshots/map.png)
 
-
 ## Overview
-A refreshable Excel dashboard built from CMS Provider Data to compare hospital patient experience by state, ownership type, and facility.
+A refreshable Excel dashboard built from CMS Provider Data to compare hospital patient experience by **state**, **ownership type**, and **facility**.
 
 ## Data Sources (CMS Provider Data)
-- Hospitals: Hospital General Information (CSV)
-- Patient Experience: HCAHPS – Hospital Patient Survey (CSV)
+- **Hospitals:** Hospital General Information (CSV)
+- **Patient Experience:** HCAHPS – Hospital Patient Survey (CSV)
 
 ## Join Key
-- **Facility ID** (stored as Text in all queries)
+- **Facility ID** (stored as **Text** in all queries)
 
 ## Power Query Steps
-- Imported both CSVs using Power Query  
-- Set data types (Facility ID = Text; dates = Date; KPIs = Number)  
-- Replaced **Not Available / Not Applicable** with null  
-- Kept the latest reporting period using **End Date** and removed duplicates  
-- Filtered to selected HCAHPS top-box measures and pivoted to **1 row per hospital**  
-- Merged HCAHPS KPIs into Hospital General Information using Facility ID  
+- Imported both CSVs using Power Query
+- Set data types (Facility ID = Text; dates = Date; KPI fields = Number)
+- Replaced **Not Available / Not Applicable** with null
+- Kept the latest reporting period using **End Date** and removed duplicates
+- Filtered to selected HCAHPS **top-box** measures and pivoted to **1 row per hospital**
+- Merged HCAHPS KPIs into Hospital General Information using Facility ID
 
 ## KPIs (HCAHPS Top-Box %)
 - Nurse communication (Always) %
@@ -39,4 +38,9 @@ A refreshable Excel dashboard built from CMS Provider Data to compare hospital p
 - Lowest by Recommend %: **VI / DC / PR**
 
 ## How to Refresh
-Excel → Data → Refresh All
+Excel → Data → Refresh All  
+*(To refresh on another machine, update the Power Query “Source” file paths to your local CSV locations.)*
+
+## Files
+- Screenshots are included in `/screenshots/`.
+- Workbook available upon request.
