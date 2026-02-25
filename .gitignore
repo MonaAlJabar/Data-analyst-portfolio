@@ -3,6 +3,11 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+# Excel temporary / lock files
+~$*.xlsx
+~$*.xls
+~$*.xlsm
+
 # C extensions
 *.so
 
