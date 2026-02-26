@@ -26,7 +26,7 @@ A refreshable Excel dashboard built from CMS Provider Data to compare hospital p
 - Recommend the hospital (Yes, definitely) %
 - Overall hospital rating (9–10) %
 
-## KPI Definitions (Compact)
+## KPI Definitions 
 
 ### Nurse Communication (Always) %
 - **Definition:** CMS-published percentage of surveyed patients selecting “Always” for the item: nurses “Always communicated well.”
