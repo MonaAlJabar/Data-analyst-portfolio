@@ -14,7 +14,7 @@ A refreshable Excel dashboard built from CMS Provider Data to compare hospital p
 - **Facility ID** (stored as **Text** in all queries)
 
 ## Data Preparation (Power Query)
-- Imported both CSVs with Power Query and standardized data types (Facility ID = Text; dates = Date; KPIs = Number)
+- Imported both CSVs and standardized data types (Facility ID = Text; dates = Date; KPI fields = Number)
 - Converted **Not Available / Not Applicable** to null
 - Kept the **latest reporting period** using **End Date** and removed duplicates
 - Filtered to selected HCAHPS **top-box** measures and pivoted to **one row per hospital**
@@ -23,22 +23,22 @@ A refreshable Excel dashboard built from CMS Provider Data to compare hospital p
 ## KPI Definitions (HCAHPS Top-Box %)
 
 ### Nurse Communication (Always) %
-- **Definition:** CMS-published percentage of surveyed patients selecting **“Always”** for: nurses **“Always communicated well.”**
-- **Exact logic:** `HCAHPS Answer Percent` where `HCAHPS Question` = *Patients who reported that their nurses "Always" communicated well* and `HCAHPS Answer Description` = *Always*. Latest `End Date` retained; Not Available/Not Applicable → null.
-- **Level:** Hospital-level (per facility per reporting period). Dashboard reports **average across hospitals** when grouped by State/Ownership.
+- **Definition:** % of surveyed patients selecting **“Always”** for the item: nurses **“Always communicated well.”**
 - **Why it matters:** Reflects frontline communication quality and strongly influences patient experience.
 
 ### Recommend the Hospital (Yes, definitely) %
-- **Definition:** CMS-published percentage of surveyed patients who responded **“Yes, definitely”** to recommending the hospital.
-- **Exact logic:** `HCAHPS Answer Percent` where `HCAHPS Question` = *Patients who reported YES, they would definitely recommend the hospital* and `HCAHPS Answer Description` = *Yes, definitely*. Latest `End Date` retained; Not Available/Not Applicable → null.
-- **Level:** Hospital-level (per facility per reporting period). Dashboard reports **average across hospitals** by State/Ownership and supports facility-level filtering.
+- **Definition:** % of surveyed patients who answered **“Yes, definitely”** when asked if they would recommend the hospital.
 - **Why it matters:** Strong summary indicator of overall satisfaction and patient loyalty.
 
 ### Overall Hospital Rating (9–10) %
-- **Definition:** CMS-published percentage of surveyed patients rating the hospital **9 or 10** on a 0–10 scale.
-- **Exact logic:** `HCAHPS Answer Percent` where `HCAHPS Question` = *Patients who gave their hospital a rating of 9 or 10 on a scale from 0 (lowest) to 10 (highest)* and `HCAHPS Answer Description` matches the top-box category (e.g., *9 and 10*). Latest `End Date` retained; Not Available/Not Applicable → null.
-- **Level:** Hospital-level (per facility per reporting period). Dashboard reports **average across hospitals** when grouped by State/Ownership.
+- **Definition:** % of surveyed patients rating the hospital **9 or 10** on a 0–10 scale.
 - **Why it matters:** Headline patient experience measure capturing broad aspects of care beyond communication alone.
+
+## Measurement Notes (Applied to All KPIs)
+- KPI values come from CMS as `HCAHPS Answer Percent` for the selected question/answer rows.
+- When multiple reporting periods existed, the **latest `End Date`** was retained.
+- **Not Available / Not Applicable** values were treated as null and excluded from averages.
+- Dashboard comparisons by State/Ownership report the **average across hospitals** (unweighted).
 
 ## Dashboard Views
 - Patient Experience by State (Top-Box %)
