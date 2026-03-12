@@ -20,6 +20,9 @@ The dataset contains retail transaction records with fields including:
 - **Price**
 - **Customer ID**
 - **Country**
+  
+  The dataset can be downloaded from the UCI Machine Learning Repository:
+https://archive.ics.uci.edu/ml/datasets/online+retail+ii
 
 ## Features Created
 - **Sales** = Quantity × Price
